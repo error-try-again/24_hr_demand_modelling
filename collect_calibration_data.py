@@ -4,8 +4,7 @@ collect_calibration_data.py — After Dark calibration data collector
 ====================================================================
 
 Downloads public datasets from ACT Open Data, ABS, and other sources
-to replace model priors with observed values. Run this on your local
-machine (not sandboxed) — it needs internet access.
+to replace model priors with observed values.
 
 This patched version improves two things:
   1. If local ACT HTS Excel workbooks are present, it uses those instead of
