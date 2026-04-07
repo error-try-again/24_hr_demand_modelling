@@ -2,12 +2,10 @@
 """
 canberra_support_data_builder.py
 
-Build canonical support files for after_dark_stop_hour_model_v7.py:
+Build canonical support files for after_dark_stop_hour_model.py:
 - weather.csv
 - events.csv
 - ops.csv
-
-Design goals:
 - Accept messy CSV/XLSX/JSON/HTML exports or raw downloaded pages.
 - Normalize to the exact columns your demand model loader accepts.
 - Stay useful even when public source formats change.
@@ -16,7 +14,7 @@ Requires:
     pip install pandas requests lxml openpyxl beautifulsoup4
 
 
-Examples:
+Useage:
     python canberra_support_data_builder.py templates --outdir ./support_templates
 
     python canberra_support_data_builder.py fetch \
