@@ -3,27 +3,24 @@
 After Dark, On Tap — Stop-Hour Footfall + Conversion Model v11
 ===============================================================
 
-Full 24-hour, multi-channel demand model. v11 fixes three structural
-weaknesses identified in the v10 review:
+Full 24-hour, multi-channel demand model.
 
-What changed in v11 (relative to v10):
-  1. Ambient pedestrian channel now uses absolute daily estimate (aadt_ped_daily)
-     instead of a ratio multiplied against LR passersby. Eliminates the semantic
-     mismatch where AADT-calibrated values and hardcoded defaults meant different
-     things at different scales.
-  2. Bus passenger channel added. Calibration already produced bus_daily_frontage
-     and bus_conv_mean/sd but the simulation never consumed them. Now it does.
-  3. Validation check: modelled LR passersby (after board_weight × alight_weight ×
-     frontage_share) are compared against calibration lr_daily. Warns if they
-     diverge by >2×, indicating the weight/frontage parameters are wrong.
-  4. Weekend ambient factor now consumed from calibration (aadt_weekend_factor)
-     instead of hardcoded 0.70.
-
-Carried forward from v10:
   - Full 24-hour trading with per-segment conversion profiles.
   - Stop-level boardings/alightings from ACT Open Data.
   - Weather, events, operations, callouts optional inputs.
   - Free responder cup economics.
+  - Ambient pedestrian channel now uses absolute daily estimate (aadt_ped_daily)
+    instead of a ratio multiplied against LR passersby. Eliminates the semantic
+    mismatch where AADT-calibrated values and hardcoded defaults meant different
+    things at different scales.
+  - Bus passenger channel added. Calibration already produced bus_daily_frontage
+    and bus_conv_mean/sd but the simulation never consumed them. Now it does.
+  - Validation check: modelled LR passersby (after board_weight × alight_weight ×
+    frontage_share) are compared against calibration lr_daily. Warns if they
+    diverge by >2×, indicating the weight/frontage parameters are wrong.
+  - Weekend ambient factor now consumed from calibration (aadt_weekend_factor)
+    instead of hardcoded 0.70.
+
 
 Intended ACT data inputs (export these as CSVs from the official sources):
   - Boardings By Stop By Quarter Hr (dataset id 7yh9-wwyp)
